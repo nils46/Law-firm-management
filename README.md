@@ -15,8 +15,6 @@ React Router DOM – routing & navigation
 
 React Hook Form – form handling
 
-Zod – schema-based form validation
-
 CSS – Clio-style UI & layout
 
 Local React State – dummy data handling
@@ -84,10 +82,4 @@ Clio-inspired layout and flows
 
 Sticky right panel for activity & actions
 
-Improved scrolling experience
-
 Modal-based creation flows
-
-Context-aware actions
-
-Clean and consistent UI structure
