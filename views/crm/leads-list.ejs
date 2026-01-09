@@ -1,0 +1,45 @@
+<%- include('../partials/html') %>
+<head>
+  <%- include('../partials/title-meta', { title: "Leads" }) %>
+  <%- include('../partials/head-css') %>
+</head>
+
+<body>
+<div class="wrapper">
+  <%- include('../partials/menu') %>
+
+  <div class="page-content">
+    <div class="container-fluid">
+
+      <div class="d-flex justify-content-between mb-3">
+        <h4>CRM Leads</h4>
+        <a href="/crm/leads/new" class="btn btn-primary">New Lead</a>
+      </div>
+
+      <div class="card">
+        <div class="card-body">
+          <table class="table">
+            <thead>
+              <tr>
+                <th>Name</th>
+                <th>Mobile</th>
+                <th>Stage</th>
+                <th>Action</th>
+              </tr>
+            </thead>
+            <tbody id="leadsTable"></tbody>
+          </table>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<%- include('../partials/footer') %>
+<%- include('../partials/footer-scripts') %>
+
+<script src="/js/components/crm/lead-storage.js"></script>
+<script src="/js/pages/crm/leads-list.js"></script>
+</body>
+</html>

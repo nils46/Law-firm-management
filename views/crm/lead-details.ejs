@@ -1,0 +1,102 @@
+<%- include('../partials/html') %>
+<head>
+  <%- include('../partials/title-meta', { title: "Lead Details" }) %>
+  <%- include('../partials/head-css') %>
+</head>
+
+<body>
+<div class="wrapper">
+  <%- include('../partials/menu') %>
+
+  <div class="page-content">
+    <div class="container-fluid">
+
+      <!-- HIDDEN LEAD ID (VERY IMPORTANT) -->
+      <input type="hidden" id="leadId" value="<%= leadId %>">
+      <!-- Lead Summary -->
+      <div class="card mb-3">
+        <div class="card-body">
+          <h4 id="leadName"></h4>
+          <span id="leadStage" class="badge bg-primary"></span>
+        </div>
+      </div>
+
+      <!-- Lead Info -->
+      <div class="card mb-3">
+        <div class="card-body">
+          <p><strong>Mobile:</strong> <span id="leadMobile"></span></p>
+          <p><strong>Email:</strong> <span id="leadEmail"></span></p>
+          <p><strong>Practice Area:</strong> <span id="leadPractice"></span></p>
+          <p><strong>Notes:</strong> <span id="leadNotes"></span></p>
+        </div>
+      </div>
+
+      <!-- Convert Lead -->
+      <button id="convertLead" class="btn btn-success mb-4">
+        Convert to Contact
+      </button>
+
+      <!-- ADD FOLLOW-UP -->
+      <div class="card mb-3">
+        <div class="card-body">
+          <h5>Add Follow-up</h5>
+
+          <form id="followupForm" class="row g-3">
+            <div class="col-md-4">
+              <label class="form-label">Follow-up Date & Time</label>
+              <input type="datetime-local"
+                     name="followup_datetime"
+                     class="form-control"
+                     required>
+            </div>
+
+            <div class="col-md-4">
+              <label class="form-label">Next Action</label>
+              <input name="next_action"
+                     class="form-control"
+                     placeholder="Call / Meeting / Email"
+                     required>
+            </div>
+
+            <div class="col-md-12">
+              <label class="form-label">Comment</label>
+              <textarea name="comment"
+                        class="form-control"
+                        rows="2"></textarea>
+            </div>
+
+            <div class="col-12">
+              <button class="btn btn-primary">Add Follow-up</button>
+            </div>
+          </form>
+        </div>
+      </div>
+
+      <!-- FOLLOW-UP TIMELINE -->
+      <div class="card">
+        <div class="card-body">
+          <h5>Follow-up Timeline</h5>
+          <ul id="followupList" class="list-group"></ul>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <%- include('../partials/footer') %>
+</div>
+
+<!-- SCRIPTS -->
+<%- include('../partials/footer-scripts') %>
+
+<script src="/js/components/crm/lead-storage.js"></script>
+<script src="/js/components/crm/contact-storage.js"></script>
+<script src="/js/components/crm/followup-storage.js"></script>
+
+<script src="/js/pages/crm/lead-detail.js"></script>
+<script src="/js/pages/crm/lead-followup.js"></script>
+<script src="/js/components/crm/lead-convert.js"></script>
+
+
+</body>
+</html>

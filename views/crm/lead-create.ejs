@@ -1,0 +1,92 @@
+<%- include('../partials/html') %>
+<head>
+  <%- include('../partials/title-meta', { title: "Lead" }) %>
+  <%- include('../partials/head-css') %>
+</head>
+
+<body>
+<div class="wrapper">
+  <%- include('../partials/menu') %>
+
+  <div class="page-content">
+    <div class="container-fluid">
+
+      <div class="card">
+        <div class="card-header">
+          <h4><%= lead ? 'Edit Lead' : 'Create Lead' %></h4>
+        </div>
+
+        <div class="card-body">
+          <form id="leadForm">
+            <input type="hidden" id="leadId" value="<%= lead?.id || '' %>">
+
+            <div class="row g-3">
+              <div class="col-md-6">
+                <label>Full Name</label>
+                <input class="form-control" name="full_name" required>
+              </div>
+
+              <div class="col-md-6">
+                <label>Mobile</label>
+                <input class="form-control" name="mobile" required>
+              </div>
+
+              <div class="col-md-6">
+                <label>Email</label>
+                <input class="form-control" name="email">
+              </div>
+              <div class="col-md-6">
+  <label>Lead Source</label>
+  <select name="source" class="form-select">
+    <option value="">Select</option>
+    <option>Website</option>
+    <option>Referral</option>
+    <option>Phone</option>
+  </select>
+</div>
+
+<div class="col-md-6">
+  <label>Preferred Contact</label>
+  <select name="preferred_contact" class="form-select">
+    <option>Call</option>
+    <option>Email</option>
+    <option>WhatsApp</option>
+  </select>
+</div>
+
+
+              <div class="col-md-6">
+                <label>Practice Area</label>
+                <select name="practice_area" class="form-select">
+                  <option>Civil</option>
+                  <option>Criminal</option>
+                  <option>Corporate</option>
+                </select>
+              </div>
+
+              <div class="col-12">
+                <label>Notes</label>
+                <textarea class="form-control" name="notes"></textarea>
+              </div>
+
+              <div class="col-12">
+                <button class="btn btn-primary">Save</button>
+                <a href="/crm/leads" class="btn btn-secondary">Cancel</a>
+              </div>
+            </div>
+
+          </form>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<%- include('../partials/footer') %>
+<%- include('../partials/footer-scripts') %>
+
+<script src="/js/components/crm/lead-storage.js"></script>
+<script src="/js/pages/crm/lead-create.js"></script>
+</body>
+</html>

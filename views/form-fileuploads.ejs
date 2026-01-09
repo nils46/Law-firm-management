@@ -1,0 +1,112 @@
+<%- include('partials/html') %>
+
+<head>
+    <%- include('partials/title-meta') %>
+
+    <!-- dropzone css -->
+    <link rel="stylesheet" href="/vendor/dropzone/dropzone.css" type="text/css" />
+
+    <%- include('partials/head-css') %>
+</head>
+
+<body>
+    <!-- Begin page -->
+    <div class="wrapper">
+
+        <%- include('partials/menu') %>
+
+        <!-- ============================================================== -->
+        <!-- Start Page Content here -->
+        <!-- ============================================================== -->
+
+        <div class="page-content">
+
+            <div class="page-container">
+
+                <div class="card">
+                    <div class="card-header border-bottom border-dashed d-flex align-items-center">
+                        <h4 class="header-title">Dropzone File Upload</h4>
+                    </div>
+
+                    <div class="card-body">
+                        <p class="text-muted">
+                            DropzoneJS is an open source library that provides drag’n’drop file uploads with image
+                            previews.
+                        </p>
+                        <form action="/" method="post" class="dropzone" id="myAwesomeDropzone" data-plugin="dropzone" data-previews-container="#file-previews" data-upload-preview-template="#uploadPreviewTemplate">
+                            <div class="fallback">
+                                <input name="file" type="file" multiple />
+                            </div>
+
+                            <div class="dz-message needsclick">
+                                <i class="ti ti-cloud-upload h1 text-muted"></i>
+                                <h3>Drop files here or click to upload.</h3>
+                                <span class="text-muted fs-13">(This is just a demo dropzone. Selected files are
+                                    <strong>not</strong> actually uploaded.)</span>
+                            </div>
+                        </form>
+
+                        <!-- Preview -->
+                        <div class="dropzone-previews mt-3" id="file-previews"></div>
+                    </div>
+                    <!-- end card-body -->
+                </div>
+                <!-- end card-->
+
+                <!-- file preview template -->
+                <div class="d-none" id="uploadPreviewTemplate">
+                    <div class="card mt-1 mb-0 shadow-none border">
+                        <div class="p-2">
+                            <div class="row align-items-center">
+                                <div class="col-auto">
+                                    <span data-dz-thumbnail>
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="avatar-sm" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-file-chart-column-increasing-icon lucide-file-chart-column-increasing">
+                                            <path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z" />
+                                            <path d="M14 2v4a2 2 0 0 0 2 2h4" />
+                                            <path d="M8 18v-2" />
+                                            <path d="M12 18v-4" />
+                                            <path d="M16 18v-6" />
+                                        </svg>
+                                    </span>
+                                </div>
+                                <div class="col ps-0">
+                                    <a href="javascript:void(0);" class="text-muted fw-medium" data-dz-name></a>
+                                    <p class="mb-0" data-dz-size></p>
+                                </div>
+                                <div class="col-auto">
+                                    <!-- Button -->
+                                    <a href="" class="btn btn-link btn-lg text-muted" data-dz-remove>
+                                        <i class="ti ti-x"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <!-- container -->
+
+            <%- include('partials/footer') %>
+
+        </div>
+
+        <!-- ============================================================== -->
+        <!-- End Page content -->
+        <!-- ============================================================== -->
+    </div>
+    <!-- END wrapper -->
+
+    <%- include('partials/customizer') %>
+
+    <%- include('partials/footer-scripts') %>
+
+    <!-- Dropzone File Upload js -->
+    <script src="/vendor/dropzone/dropzone-min.js"></script>
+
+    <!-- File Upload Demo js -->
+    <script src="/js/components/form-fileupload.js"></script>
+
+</body>
+
+</html>
